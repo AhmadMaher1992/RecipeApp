@@ -61,7 +61,7 @@ class OrderDetailsVC: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!{
         didSet{
             let layout = UPCarouselFlowLayout()
-            layout.itemSize = CGSize(width: collectionView.bounds.width, height: collectionView.bounds.height)
+            layout.itemSize = CGSize(width: 200 , height: collectionView.bounds.height)
             layout.scrollDirection = .horizontal
             collectionView.collectionViewLayout = layout
             collectionView.dataSource = self
@@ -312,28 +312,12 @@ extension OrderDetailsVC: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        if collectionView == self.menuCollection {
-            
-            return CGSize(width: self.view.frame.width / CGFloat(menuTitles.count), height: collectionView.bounds.height)
-        }
-        else if collectionView == self.collectionView {
-            return CGSize(width: collectionView.bounds.width , height: collectionView.bounds.height)
-        }
-        //        else if collectionView == self.collectionView{
-        //            switch indexPath.item {
-        //            case 1:
-        //                return CGSize(width: 200, height: 200)
-        //            case 2:
-        //                return CGSize(width: 150, height: 150)
-        //            case 3:
-        //                return CGSize(width: 100 , height: 100)
-        //            default:
-        //            break
-        //
-        //            }
-        //
-        //        }
-        return CGSize(width: 50, height:50)
+        guard collectionView == self.menuCollection else { return CGSize(width: 200, height: self.collectionView.bounds.height) }
+        
+        return CGSize(width: self.view.frame.width / CGFloat(menuTitles.count), height: collectionView.bounds.height)
+     
+
+        
     }
 }
 
