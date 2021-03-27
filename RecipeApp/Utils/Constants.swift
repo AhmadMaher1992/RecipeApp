@@ -26,6 +26,7 @@ struct AppCellIdentifier {
     static let RecipeCell = "RecipeCell"
     static let FavoriteCell = "FavoriteCell"
     static let CartCell = "CartCell"
+    static let ActiveOrdersCell = "ActiveOrdersCell"
     
 }
 
@@ -43,7 +44,7 @@ struct AppViewControllerID {
     
     
     static let CartVC = "CartVC"
-  
+    static let OrderDetailsVC = "OrderDetailsVC"
     
     
 }

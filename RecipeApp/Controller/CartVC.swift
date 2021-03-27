@@ -21,12 +21,20 @@ class CartVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         tabBarController?.tabBar.isHidden = false
+     // setupNavBar()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
         titleLabel.font = UIFont(name: AppFonts.DelaGothic, size: 20)
+    }
+    func setupNavBar(){
+        let yourBackImage = UIImage(systemName: "arrow.backward")
+        self.navigationController?.navigationBar.backIndicatorImage = yourBackImage
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = yourBackImage
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.backItem?.title = ""
     }
     
     func setupTableView(){
@@ -57,6 +65,6 @@ extension CartVC: UITableViewDelegate , UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 110
     }
 }

@@ -161,7 +161,10 @@ extension HomeVC : UITableViewDataSource , UITableViewDelegate  {
         return 200
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //TODO:- Pass Selected Model[indexPath.row] to The Destination VC
+        self.navigateViewController(storyboard: AppStoryboards.Main, viewController: AppViewControllerID.OrderDetailsVC)
+    }
     
     
 }

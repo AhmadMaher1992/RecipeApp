@@ -40,11 +40,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         // Foreground color of bar button item text, e.g. "< Back", "Done", and so on.
-        UINavigationBar.appearance().tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        //        // BACKGROUND color of nav bar
+        UINavigationBar.appearance().tintColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+              // BACKGROUND color of nav bar
         UINavigationBar.appearance().barTintColor = .clear
         UINavigationBar.appearance().clipsToBounds = false
-        //        UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
+               UIBarButtonItem.appearance().setTitleTextAttributes([.foregroundColor: UIColor.black], for: .normal)
     }
 
 
