@@ -54,8 +54,8 @@ class OrderDetailsVC: UIViewController {
     fileprivate var currentPage: Int = 0 {
         didSet {
             let character = self.items[self.currentPage]
-            self.infoLabel.text = character.name.uppercased()
-            self.detailLabel.text = character.movie.uppercased()
+            self.infoLabel.text = character.recipeName.uppercased()
+            self.detailLabel.text = character.recipePrice.uppercased()
         }
     }
     @IBOutlet weak var collectionView: UICollectionView!{
@@ -128,13 +128,13 @@ class OrderDetailsVC: UIViewController {
     
     fileprivate func createItems() -> [Character] {
         let characters = [
-            Character(imageName: "burger0", name: "burger0", movie: "burger0"),
-            Character(imageName: "burger1", name: "burger1", movie: "burger1"),
-            Character(imageName: "burger2", name: "burger2", movie: "burger2"),
-            Character(imageName: "burger4", name: "burger4", movie: "burger4"),
-            Character(imageName: "burger5", name: "burger5", movie: "burger5"),
-            Character(imageName: "burger6", name: "burger6", movie: "burger6"),
-            Character(imageName: "burger7", name: "burger7", movie: "burger7")
+            Character(imageName: "burger0", recipePrice: "55$", recipeName: "burger"),
+            Character(imageName: "burger1", recipePrice: "52$", recipeName: "burger"),
+            Character(imageName: "burger2", recipePrice: "35$", recipeName: "burger"),
+            Character(imageName: "burger4", recipePrice: "51$", recipeName: "burger"),
+            Character(imageName: "burger5", recipePrice: "51$", recipeName: "burger"),
+            Character(imageName: "burger6", recipePrice: "25$", recipeName: "burger"),
+            Character(imageName: "burger7", recipePrice: "15$", recipeName: "burger")
         ]
         return characters
     }
@@ -273,7 +273,7 @@ extension OrderDetailsVC: UICollectionViewDelegate , UICollectionViewDataSource 
         
         if collectionView == self.collectionView {
             let character = items[(indexPath as NSIndexPath).row]
-            let alert = UIAlertController(title: character.name, message: nil, preferredStyle: .alert)
+            let alert = UIAlertController(title: character.recipeName, message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             present(alert, animated: true, completion: nil)
         }
